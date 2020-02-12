@@ -1,0 +1,31 @@
+{
+  "name": "theia-cookie-auth",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.0",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "latest",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "backend": "lib/browser/cookie-auth-backend-module"
+    }
+  ]
+}
