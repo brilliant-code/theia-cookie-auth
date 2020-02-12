@@ -12,14 +12,14 @@ export class TheiaCookieAuthContribution implements BackendApplicationContributi
     configure(app: Application): void {
         app.use(cookieParser());
         app.use((request, response, next) => {
-            const cookie = {
+            const env = {
                 key: process.env.COOKIE_NAME,
                 value: process.env.COOKIE_VALUE,
                 error: process.env.ERROR_MESSAGE
             }
-            
-            if (cookie.key in request.cookies === false) {
-                response.status(401).send(cookie.error)
+
+            if (!(env.key in request.cookies) || request.cookies[env.value] !== env.value) {
+                response.status(401).send(env.error)
                 return
             } else {
                 next()
