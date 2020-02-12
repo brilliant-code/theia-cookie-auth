@@ -1,9 +1,24 @@
-# Cookie auth
+# Theia cookie auth
 
-The example of how to build the Theia-based applications with the cookie-auth.
+Authorization for theia using cookie key and value
 
 ## Getting started
 
+Add package to your dependencies:
+
+```bash
+yarn add theia-cookie-auth
+# Or using npm:
+npm install theia-cookie-auth
+```
+
+Create .env file with these content:
+
+```
+COOKIE_NAME=*Your cookie name*
+COOKIE_VALUE=*Your cookie value*
+ERROR_MESSAGE=Oh! 403 error here 
+```
 
 ## Running the browser example
 
@@ -15,9 +30,9 @@ Open http://localhost:3000 in the browser.
 
 ## Developing with the browser example
 
-Start watching of cookie-auth.
+Start watching.
 
-    cd cookie-auth
+    cd theia-cookie-auth
     yarn watch
 
 Start watching of the browser example.
@@ -29,13 +44,3 @@ Start watching of the browser example.
 Launch `Start Browser Backend` configuration from VS code.
 
 Open http://localhost:3000 in the browser.
-
-## Publishing cookie-auth
-
-Create a npm user and login to the npm registry, [more on npm publishing](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-    npm login
-
-Publish packages with lerna to update versions properly across local packages, [more on publishing with lerna](https://github.com/lerna/lerna#publish).
-
-    npx lerna publish
